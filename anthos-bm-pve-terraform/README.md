@@ -21,15 +21,19 @@ on bare metal in High Availability (HA) mode using Virtual Machines
     loaded to your ssh agent.
 
 ---
-### Bare metal infrastructure on Google Cloud using Compute Engine VMs
+### Bare metal infrastructure on Proxmox
 
 The [Quick starter](docs/quickstart.md) guide sets up the following
-infrastructure in Google Cloud using Compute Engine VMs. The diagram
+infrastructure in a Proxmox cluster. The diagram
 assumes that the none of the default values for the
 [variables](variables.tf) were changed other than the ones mentioned
 in the quick starter.
 
-![Bare metal infrastructure on Google Cloud using Compute Engine VMs](docs/images/abm_gcp_infra.svg)
+this diagram was created using the Drawing feature in Google docs (Insert -> Drawing -> New+).
+The Icons came from this Google slide deck:
+https://docs.google.com/presentation/d/1fD1AwQo4E9Un6012zyPEb7NvUAGlzF6L-vo5DbUe4NQ/edit#slide=id.ga472c7d3d1_3_834
+
+![Bare metal infrastructure on Proxmox](docs/images/abm_pxe_infra.svg)
 
 ---
 ## Getting started
@@ -37,16 +41,36 @@ in the quick starter.
 - [Terraform Module Information _(includes variables definitions)_](docs/variables.md)
 
 - [Quick start guide](docs/quickstart.md):
-    - The terraform script sets up the GCE VM environment. The output of the script prints out the commands to follow to install **Anthos on bare metal** in the provisioned GCE VMs.
+    - The terraform script sets up the Proxmox VM environment. The
+      output of the script prints out the commands to follow to
+      install **Anthos on bare metal** in the provisioned Proxmox VMs.
 
 - [All in one install](docs/one_click_install.md):
-    - The terraform script sets up the GCE VM environment and also triggers the **Anthos on bare metal** installation on the provisioned GCE VMs. The output of the script prints out the commands to SSH into the *admin workstation VM* and monitor the Anthos on bare metal installation process.
+
+    - The terraform script sets up the Proxmox cluster environment and
+      also triggers the **Anthos on bare metal** installation on the
+      provisioned Proxmox VMs. The output of the script prints out the
+      commands to SSH into the *admin workstation VM* and monitor the
+      Anthos on bare metal installation process.
 
 - [Manual LB install](docs/manuallb_install.md):
-    - The terraform script sets up the GCE environment and triggers the **Anthos on bare metal** installation similar to the [all-in-one install](docs/one_click_install.md). However, in this mode **Anthos on bare metal** is installed with a [`Manual Loadbalancer`](https://cloud.google.com/anthos/clusters/docs/bare-metal/latest/installing/manual-lb) instead of the default [`Bundled LB`](https://cloud.google.com/anthos/clusters/docs/bare-metal/latest/installing/bundled-lb). We use [Google Cloud Loadbalancer](https://cloud.google.com/load-balancing/docs/load-balancing-overview) as the manual loadbalancer for the Anthos on bare metal cluster. The output of the script prints out the same instructions as the all-in-one install; additionally it also prints out the **Public IP** addresses of the loadbalancers.
+
+    - The terraform script sets up the Proxmox environment and
+      triggers the **Anthos on bare metal** installation similar to
+      the [all-in-one install](docs/one_click_install.md). However, in
+      this mode **Anthos on bare metal** is installed with a [`Manual
+      Loadbalancer`](https://cloud.google.com/anthos/clusters/docs/bare-metal/latest/installing/manual-lb)
+      instead of the default [`Bundled
+      LB`](https://cloud.google.com/anthos/clusters/docs/bare-metal/latest/installing/bundled-lb).
+      We use [???](???)  as the manual loadbalancer for the Anthos on
+      bare metal cluster. The output of the script prints out the same
+      instructions as the all-in-one install; additionally it also
+      prints out the **Public IP** addresses of the loadbalancers.
 
 - [NFS Shared Storage](docs/nfs.md):
-    - An optional NFS server is provisioned in conjunction with any of the install methods above to provide shared storage to the **Anthos on bare metal** cluster.
+    - An optional NFS server is provisioned in conjunction with any of
+      the install methods above to provide shared storage to the
+      **Anthos on bare metal** cluster.
 
 ---
 ## Contributing
