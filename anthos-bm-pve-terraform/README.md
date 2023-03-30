@@ -76,20 +76,20 @@ https://docs.google.com/presentation/d/1fD1AwQo4E9Un6012zyPEb7NvUAGlzF6L-vo5DbUe
 ## Contributing
 
 #### Pre-requisites
-- The same [pre-requisites](#pre-requisites) to run this sample is required for testing as well
+- The same [pre-requisites](#pre-requisites) to run this sample are
+  required for testing as well
 
 #### Pull requests
-- For improvements to this sample submit your pull requests to the `main` branch
+- For improvements to this sample submit your pull requests to the
+  `main` branch
 
 #### Testing
-- Ensure that the improvements have _unit/integration tests_ where appropriate
-- To run the existing tests you have to set two environment variables
-```bash
-export GOOGLE_CLOUD_PROJECT="<YOUR_GOOGLE_CLOUD_PROJECT>"
-export GOOGLE_APPLICATION_CREDENTIALS="<PATH_TO_THE_SERVICE_ACCOUNT_KEY_FILE>"
-```
+- Ensure that the improvements have _unit/integration tests_ where
+  appropriate
+- To run the existing tests you have to ssh-add an authorized key to
+  your ssh-agent
 - Move into the test directory and recursively execute the tests
 ```bash
-cd anthos-bm-gcp-terraform/test
+cd anthos-bm-pve-terraform/test
 go test -v -timeout 30m ./...
 ```
